@@ -1,0 +1,130 @@
+#navbar-title{
+    text-align: center;
+    font-size: 80px;
+    padding: 2px 2px;
+    -webkit-text-stroke: 2px white;
+    color: black;
+}
+h2{
+    font-size: 50px;
+}
+.navbar{
+    text-align: center;
+    /* background-color: white; */
+
+}
+#timers{
+    color: rgb(18, 212, 18);
+}
+body{
+    background-image: url(https://images.unsplash.com/photo-1582730147924-d92f4da00252?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2251&q=80);
+    height: 700px; /* You must set a specified height */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+    font-family: 'Alfa Slab One';font-size: 22px;
+
+}
+
+
+#page-header{
+    text-align: center;
+    background-color: rgb(186, 196, 187);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    padding: 2px 16px;
+    border-radius: 5px 5px 0 0;
+
+    margin: auto;
+    width: 50%;
+    border: 3px solid rgb(19, 0, 128);
+    padding: 10px;
+}
+.play-button{
+    background-color:rgb(186, 196, 187);
+
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 40px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.play-buttons{
+    background-color:rgb(186, 196, 187);
+
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.play-again{
+    background-color:rgb(186, 196, 187);
+
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.view-scores{
+    background-color:rgb(186, 196, 187);
+
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+input[type=text] {
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    border-radius: 25px;
+  }
+
+ .button-choice{
+      font-size: 20px;
+      border-radius: 3px;
+      border: 1px solid black;
+      height: 50px;
+      background-color: rgb(243, 239, 239);
+
+
+  }
+
+  .button-choice:hover{
+    background-color: transparent;
+
+  }
+  .button-grid{
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
+    column-gap: 10px;
+  }
