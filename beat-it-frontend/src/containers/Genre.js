@@ -1,6 +1,11 @@
 import React from 'react'
 
 class Genre extends React.Component {
+
+    submitHandler = () => {
+        window.location = '/home/'
+    }
+
     render(){
         return(
             <div>
