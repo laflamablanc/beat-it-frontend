@@ -1,13 +1,33 @@
 import './App.css';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import React from 'react'
+import {Route, Switch, withRouter} from 'react-router-dom'
 import Login from './containers/Login'
+import Signup from './containers/Signup'
+import NewGame from './containers/NewGame'
+import Genre from './containers/Genre'
+import Difficulty from './containers/Difficulty'
 
-function App() {
+
+class App extends React.Component {
+
+  state = {
+    user: null
+  }
+  render(){
+  
   return (
-    <div className="App">
-      <h1> Welcome to my App!</h1>
-    </div>
+    <React.Fragment>
+      <Switch>
+        <Route path="/login" component={Login}/>
+        <Route path="/signup" component={Signup}/>
+        <Route path="/genre" component={Genre}/>
+        <Route path="/difficulty" component={Difficulty}/>
+        <Route path="/" component={NewGame}/>
+      </Switch>
+    </React.Fragment>
   );
+  }
+    
 }
 
 export default App;
