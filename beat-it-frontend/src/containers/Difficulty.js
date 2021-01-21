@@ -1,4 +1,6 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
+
 
 class Difficulty extends React.Component {
 
@@ -10,7 +12,7 @@ class Difficulty extends React.Component {
         return(
             <div>
                 <h1>Select Difficulty</h1>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
                     <button class = "play-button" type = "submit" value = "Play">🎵</button>
                 </form>
@@ -19,4 +21,4 @@ class Difficulty extends React.Component {
     }
 }
 
-export default Difficulty
+export default withRouter(Difficulty)

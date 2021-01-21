@@ -1,4 +1,6 @@
 import React from 'react'
+import {withRouter} from 'react-router-dom'
+
 
 class Genre extends React.Component {
 
@@ -10,7 +12,7 @@ class Genre extends React.Component {
         return(
             <div>
                 <h1>Select Genre</h1>
-                <form>
+                <form onSubmit={this.submitHandler}>
                     <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
                     <button class = "play-button" type = "submit" value = "Play">🎵</button>
                 </form>
@@ -19,4 +21,4 @@ class Genre extends React.Component {
     }
 }
 
-export default Genre
+export default withRouter(Genre)
