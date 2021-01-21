@@ -1,5 +1,5 @@
 import React from 'react'
-import {Redirect} from 'react-router-dom'
+import {withRouter} from 'react-router-dom'
 
 class NewGame extends React.Component {
 
@@ -8,16 +8,14 @@ class NewGame extends React.Component {
     }
 
     submitHandler = () => {
-        this.setState({
-            clicked: true
-        })
+        this.props.history.push("/genre")
     }
 
+
     render(){
+        console.log(this.props)
 
         return(
-            <div>
-            {this.state.clicked? <Redirect to='/genre' /> :
             <div>
                 <h1>New Game</h1>
                 <form onSubmit={this.submitHandler}>
@@ -25,12 +23,8 @@ class NewGame extends React.Component {
                     <button class = "play-button" type = "submit" value = "Play">🎵</button>
                 </form>
             </div>
-        }
-
-            </div>
-
         )
     }
 }
 
-export default NewGame
+export default withRouter(NewGame)

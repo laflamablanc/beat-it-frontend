@@ -3,7 +3,7 @@ import React from 'react'
 class Genre extends React.Component {
 
     submitHandler = () => {
-        window.location = '/home/'
+        this.props.history.push("/difficulty")
     }
 
     render(){
