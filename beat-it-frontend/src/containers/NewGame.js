@@ -17,11 +17,9 @@ class NewGame extends React.Component {
 
         return(
             <div>
-                <h1>New Game</h1>
-                <form onSubmit={this.submitHandler}>
-                    <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
-                    <button class = "play-button" type = "submit" value = "Play">🎵</button>
-                </form>
+                <h1>Beat It!</h1>
+                <CardButton displayText="Start Game"/>
+                <CardButton displayText="View Scores"/>
             </div>
         )
     }
