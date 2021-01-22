@@ -6,7 +6,7 @@ import Signup from './containers/Signup'
 import NewGame from './containers/NewGame'
 import Genre from './containers/Genre'
 import Difficulty from './containers/Difficulty'
-import Difficulty from './containers/HighScores'
+import HighScores from './containers/HighScores'
 
 
 

@@ -4,6 +4,11 @@ import {Link, withRouter} from 'react-router-dom'
 
 class Login extends React.Component{
 
+    state = {
+        username: "",
+        password: ""
+    }
+
     render(){
         return(
             <div className="login-page">

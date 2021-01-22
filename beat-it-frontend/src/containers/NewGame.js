@@ -21,7 +21,7 @@ class NewGame extends React.Component {
         console.log(this.props)
 
         return(
-            <div>
+            <div id="page-header">
                 <h1>Beat It!</h1>
                 <CardButton displayText="Start Game" submitHandler={this.submitHandler}/>
                 <CardButton displayText="View Scores" submitHandler={this.submitHandler}/>
