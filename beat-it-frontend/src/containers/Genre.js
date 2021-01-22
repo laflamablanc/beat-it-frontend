@@ -1,8 +1,12 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {Redirect, withRouter} from 'react-router-dom'
 
 
 class Genre extends React.Component {
+
+    state = {
+        user: null
+    }
 
     submitHandler = () => {
         this.props.history.push("/difficulty")
@@ -10,14 +14,19 @@ class Genre extends React.Component {
 
     render(){
         return(
-            <div>
-                <h1>Select Genre</h1>
-                <form onSubmit={this.submitHandler}>
-                    <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
-                    <button class = "play-button" type = "submit" value = "Play">🎵</button>
-                </form>
-            </div>
+            this.state.user? 
+                    <div>
+                        <h1>Select Genre</h1>
+                        <form onSubmit={this.submitHandler}>
+                            <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
+                            <button class = "play-button" type = "submit" value = "Play">🎵</button>
+                        </form>
+                    </div>
+
+            :
+           <Redirect to="/login"/>
         )
+           
     }
 }
 

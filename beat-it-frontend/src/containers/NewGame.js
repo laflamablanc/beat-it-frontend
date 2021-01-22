@@ -1,5 +1,6 @@
 import React from 'react'
 import {withRouter} from 'react-router-dom'
+import CardButton from '../components/CardButton'
 
 class NewGame extends React.Component {
 
@@ -7,8 +8,12 @@ class NewGame extends React.Component {
         clicked: false
     }
 
-    submitHandler = () => {
-        this.props.history.push("/genre")
+    submitHandler = (e) => {
+        if (e.target.id == "Start Game"){
+            this.props.history.push("/genre")
+        } else if (e.target.id == "View Scores"){
+            this.props.history.push("/highscores")
+        }
     }
 
 
@@ -18,8 +23,8 @@ class NewGame extends React.Component {
         return(
             <div>
                 <h1>Beat It!</h1>
-                <CardButton displayText="Start Game"/>
-                <CardButton displayText="View Scores"/>
+                <CardButton displayText="Start Game" submitHandler={this.submitHandler}/>
+                <CardButton displayText="View Scores" submitHandler={this.submitHandler}/>
             </div>
         )
     }

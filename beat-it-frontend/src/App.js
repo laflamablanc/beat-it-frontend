@@ -6,6 +6,8 @@ import Signup from './containers/Signup'
 import NewGame from './containers/NewGame'
 import Genre from './containers/Genre'
 import Difficulty from './containers/Difficulty'
+import Difficulty from './containers/HighScores'
+
 
 
 class App extends React.Component {
@@ -22,6 +24,7 @@ class App extends React.Component {
         <Route path="/signup" component={Signup}/>
         <Route path="/genre" component={Genre}/>
         <Route path="/difficulty" component={Difficulty}/>
+        <Route path="/highscores" component={HighScores}/>
         <Route path="/" component={NewGame}/>
       </Switch>
     </React.Fragment>
