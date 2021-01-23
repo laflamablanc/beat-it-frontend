@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 class QuestionContainer extends React.Component{
 
     state = {
+        user: this.props.user,
         questionArray: [],
         questionId: 1
     }

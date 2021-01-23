@@ -11,7 +11,7 @@ class Difficulty extends React.Component {
     }
 
     clickHandler = () => {
-        this.props.history.push("/difficulty")
+        this.props.history.push("/question")
     }
 
    

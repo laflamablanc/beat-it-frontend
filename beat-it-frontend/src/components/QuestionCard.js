@@ -1,6 +1,8 @@
 import React from 'react'
 
-const QuestionCard = () => {
+const QuestionCard = (props) => {
+  console.log("Props", props)
+
     return(
         <div>
           {/* <h2>${data.ask}</h2>

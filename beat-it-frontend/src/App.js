@@ -72,7 +72,7 @@ class App extends React.Component {
           <Route path="/genre" render={()=> <Genre user = {this.state.user} questionID = {this.state.questionID}/>}/>
           <Route path="/difficulty" render={()=> <Difficulty user = {this.state.user}/>}/>
           <Route path="/highscores" render={()=> <HighScores user = {this.state.user}/>}/>
-          <Route path="/question/:id" render={()=> <QuestionContainer user = {this.state.user} questionID = {this.state.questionId}/>}/>
+          <Route path="/question/" render={()=> <QuestionContainer user = {this.state.user} questionID = {this.state.questionId}/>}/>
           <Route path="/" render={()=> <NewGame user = {this.state.user}/>}/>
         </Switch>
       </React.Fragment>
