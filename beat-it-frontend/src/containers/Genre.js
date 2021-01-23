@@ -10,6 +10,9 @@ class Genre extends React.Component {
         questionId: this.props.questionId
     }
 
+    clickHandler = () => {
+        console.log("click")
+    }
 
    
 
@@ -20,8 +23,8 @@ class Genre extends React.Component {
             this.state.user? 
                     <div className = "card">
                         <h1>Select Genre</h1>
-                        <CardButton displayText="Rap"/>
-                        <CardButton displayText="Rock"/>
+                        <CardButton clickHandler={this.clickHandler} displayText="Rap"/>
+                        <CardButton clickHandler={this.clickHandler} displayText="Rock"/>
                     </div>
 
             :
