@@ -20,12 +20,12 @@ class App extends React.Component {
   return (
     <React.Fragment>
       <Switch>
-        <Route path="/login" component={Login}/>
-        <Route path="/signup" component={Signup}/>
-        <Route path="/genre" component={Genre}/>
-        <Route path="/difficulty" component={Difficulty}/>
-        <Route path="/highscores" component={HighScores}/>
-        <Route path="/" component={NewGame}/>
+        <Route path="/login" render={()=> <Login/>}/>
+        <Route path="/signup" render={()=> <Signup/>}/>
+        <Route path="/genre" render={()=> <Genre/>}/>
+        <Route path="/difficulty" render={()=> <Difficulty/>}/>
+        <Route path="/highscores" render={()=> <HighScores/>}/>
+        <Route path="/" render={()=> <NewGame/>}/>
       </Switch>
     </React.Fragment>
   );
