@@ -11,7 +11,7 @@ class Genre extends React.Component {
     }
 
     clickHandler = () => {
-        console.log("click")
+        this.props.history.push("/difficulty")
     }
 
    

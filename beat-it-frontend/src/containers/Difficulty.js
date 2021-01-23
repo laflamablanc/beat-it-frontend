@@ -1,23 +1,36 @@
 import React from 'react'
-import {withRouter} from 'react-router-dom'
+import {Redirect, withRouter} from 'react-router-dom'
+import CardButton from '../components/CardButton'
 
 
 class Difficulty extends React.Component {
 
-    submitHandler = () => {
+    state = {
+        user: this.props.user,
+        questionId: this.props.questionId
+    }
+
+    clickHandler = () => {
         this.props.history.push("/difficulty")
     }
 
+   
+
     render(){
         return(
-            <div>
-                <h1>Select Difficulty</h1>
-                <form onSubmit={this.submitHandler}>
-                    <input type = "text" id = "username" name = "username" placeholder = "Type Username"/>
-                    <button class = "play-button" type = "submit" value = "Play">🎵</button>
-                </form>
-            </div>
+            this.state.user? 
+                    <div className = "card">
+                        <h1>Select Difficulty</h1>
+                        <CardButton clickHandler={this.clickHandler} displayText="Easy"/>
+                        <CardButton clickHandler={this.clickHandler} displayText="Medium"/>
+                        <CardButton clickHandler={this.clickHandler} displayText="Hard"/>
+
+                    </div>
+
+            :
+           <Redirect to='/question'/>
         )
+           
     }
 }
 
