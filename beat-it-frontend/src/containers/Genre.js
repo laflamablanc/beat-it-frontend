@@ -6,21 +6,12 @@ import CardButton from '../components/CardButton'
 class Genre extends React.Component {
 
     state = {
-        user: this.props.user
-        questionId: 1
+        user: this.props.user,
+        questionId: this.props.questionId
     }
 
 
-    clickHandler = (e) => {
-        if (e.target.id == "Rap"){
-            questionID = 1
-        } else (e.target.id == "Rock"){
-            questionID = 37
-        }
-
-        this.props.history.push("/difficulty")
-
-    }
+   
 
     render(){
         console.log("GENRE!!!!", this.state.user)
