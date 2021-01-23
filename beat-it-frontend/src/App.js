@@ -7,6 +7,8 @@ import NewGame from './containers/NewGame'
 import Genre from './containers/Genre'
 import Difficulty from './containers/Difficulty'
 import HighScores from './containers/HighScores'
+import QuestionContainer from './containers/QuestionContainer'
+
 
 
 
@@ -33,13 +35,13 @@ class App extends React.Component {
 
   difficultySelect = (e) => {
     if (e.target.id == "Easy"){
-        this.state.time = 60
+        this.state.gameDuration = 60
     } else if (e.target.id == "Medium"){
-      this.state.time = 30
+      this.state.gameDuration = 30
     } else if (e.target.id == "Hard"){
-      this.state.time = 15
+      this.state.gameDuration = 15
     }
-    this.props.history.push(`/question/${questionID}`)
+    this.props.history.push(`/question/${this.state.questionID}`)
   }
 
   submitCredentials = (userObj) => {
