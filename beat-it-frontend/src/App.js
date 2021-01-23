@@ -13,7 +13,29 @@ import HighScores from './containers/HighScores'
 class App extends React.Component {
 
   state = {
-    user: null
+    user: null,
+    questionID: null,
+    time: null
+  }
+
+  genreSelect = (e) => {
+    if (e.target.id == "Rap"){
+        questionID = 1
+    } else (e.target.id == "Rock"){
+        questionID = 37
+    }
+    this.props.history.push("/difficulty")
+  }
+
+  difficultySelect = (e) => {
+    if (e.target.id == "Easy"){
+        time = 60
+    } else if (e.target.id == "Medium"){
+      time = 30
+    } else (e.target.id == "Hard"){
+        time = 15
+    }
+    this.props.history.push("/difficulty")
   }
 
   submitCredentials = (userObj) => {

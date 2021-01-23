@@ -4,7 +4,7 @@ class CardButton extends React.Component {
     render(){
         return(
             <div className = "play-button">
-                <button id={this.props.displayText} onClick={this.props.clickHandler}>{this.props.displayText}</button>
+                <div id={this.props.displayText} onClick={this.props.clickHandler}>{this.props.displayText}</div>
             </div>
         )
     }
