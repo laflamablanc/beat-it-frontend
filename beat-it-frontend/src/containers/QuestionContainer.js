@@ -5,6 +5,12 @@ import { Redirect } from 'react-router-dom'
 
 
 class QuestionContainer extends React.Component{
+
+    state = {
+        questionArray: [],
+        questionId: 1
+    }
+
     render(){
         return(
             this.state.user? 
@@ -15,6 +21,10 @@ class QuestionContainer extends React.Component{
             :
             <Redirect to="/login"/>
         )
+    }
+
+    componentDidMount(){
+        fetch('http://localhost:3000/questions').questionId
     }
 }
 
