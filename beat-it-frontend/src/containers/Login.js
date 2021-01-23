@@ -9,7 +9,9 @@ class Login extends React.Component{
         password: ""
     }
 
-    localSubmitHandler = () => {
+    localSubmitHandler = (e) => {
+        e.preventDefault()
+        this.props.submitCredentials(this.state)
         this.props.history.push("/genre")
     }
 

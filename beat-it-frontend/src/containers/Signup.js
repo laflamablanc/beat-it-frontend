@@ -3,6 +3,23 @@ import {Link} from 'react-router-dom'
 
 class Signup extends React.Component{
 
+    state = {
+        username: "",
+        password: ""
+    }
+
+    localSubmitHandler = (e) => {
+        e.preventDefault()
+        this.props.submitCredentials(this.state)
+        
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            [e.target.id]: e.target.value 
+        })
+    }
+
     render(){
         return(
             <div className="login-page">

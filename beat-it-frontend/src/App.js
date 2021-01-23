@@ -15,22 +15,30 @@ class App extends React.Component {
   state = {
     user: null
   }
+
+  submitCredentials = (userObj) => {
+    this.setState({
+      user: userObj
+    })
+    this.props.history.push("/genre")
+  }
+
   render(){
-  
-  return (
-    <React.Fragment>
-      <Switch>
-        <Route path="/login" render={()=> <Login/>}/>
-        <Route path="/signup" render={()=> <Signup/>}/>
-        <Route path="/genre" render={()=> <Genre/>}/>
-        <Route path="/difficulty" render={()=> <Difficulty/>}/>
-        <Route path="/highscores" render={()=> <HighScores/>}/>
-        <Route path="/" render={()=> <NewGame/>}/>
-      </Switch>
-    </React.Fragment>
-  );
+    console.log("App User:", this.state.user)
+    return (
+      <React.Fragment>
+        <Switch>
+          <Route path="/login" render={()=> <Login submitCredentials={this.submitCredentials}/>}/>
+          <Route path="/signup" render={()=> <Signup submitCredentials={this.submitCredentials}/>}/>
+          <Route path="/genre" render={()=> <Genre user = {this.state.user}/>}/>
+          <Route path="/difficulty" render={()=> <Difficulty user = {this.state.user}/>}/>
+          <Route path="/highscores" render={()=> <HighScores user = {this.state.user}/>}/>
+          <Route path="/" render={()=> <NewGame user = {this.state.user}/>}/>
+        </Switch>
+      </React.Fragment>
+    );
   }
     
 }
 
-export default App;
+export default withRouter(App);
