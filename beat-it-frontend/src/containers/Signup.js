@@ -22,7 +22,7 @@ class Signup extends React.Component{
 
     render(){
         return(
-            <div className="login-page">
+            <div className="card">
                 <div className="login-page-card">
                 <img src="/LoginLogoClear.png" alt=""/>
                 <h5 className="login-page-header-text login-page-header-text-sm"> Please Signup Below </h5>

@@ -5,7 +5,7 @@ import {Redirect, withRouter} from 'react-router-dom'
 class Genre extends React.Component {
 
     state = {
-        user: null
+        user: this.props.user
     }
 
     submitHandler = () => {
@@ -13,7 +13,9 @@ class Genre extends React.Component {
     }
 
     render(){
+        console.log("GENRE!!!!", this.state.user)
         return(
+            
             this.state.user? 
                     <div>
                         <h1>Select Genre</h1>

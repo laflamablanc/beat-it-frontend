@@ -17,10 +17,21 @@ class App extends React.Component {
   }
 
   submitCredentials = (userObj) => {
-    this.setState({
-      user: userObj
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        accepts: "application/json",
+        "content-type": "application/json"
+      },
+      body: JSON.stringify({user: userObj})
     })
-    this.props.history.push("/genre")
+    .then(r => r.json())
+    .then(user => {
+      this.setState({
+        user: userObj
+      })
+      this.props.history.push("/")
+    })
   }
 
   render(){

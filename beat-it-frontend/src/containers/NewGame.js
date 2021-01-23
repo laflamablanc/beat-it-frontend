@@ -5,10 +5,11 @@ import CardButton from '../components/CardButton'
 class NewGame extends React.Component {
 
     state = {
-        clicked: false
+        user: this.props.user
     }
 
-    submitHandler = (e) => {
+    clickHandler = (e) => {
+
         if (e.target.id == "Start Game"){
             this.props.history.push("/genre")
         } else if (e.target.id == "View Scores"){
@@ -18,13 +19,13 @@ class NewGame extends React.Component {
 
 
     render(){
-        console.log(this.props)
+        console.log(this.state)
 
         return(
             <div id="page-header">
                 <h1>Beat It!</h1>
-                <CardButton displayText="Start Game" submitHandler={this.submitHandler}/>
-                <CardButton displayText="View Scores" submitHandler={this.submitHandler}/>
+                <CardButton displayText="Start Game" clickHandler={this.clickHandler}/>
+                <CardButton displayText="View Scores" clickHandler={this.clickHandler}/>
             </div>
         )
     }
