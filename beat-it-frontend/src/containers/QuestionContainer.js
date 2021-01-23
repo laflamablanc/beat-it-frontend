@@ -24,7 +24,10 @@ class QuestionContainer extends React.Component{
     }
 
     componentDidMount(){
-        fetch('http://localhost:3000/questions').questionId
+        fetch('http://localhost:3000/questions')
+        .then(r=> r.json())
+        .then(data => console.log("Questions", data))
+
     }
 }
 
