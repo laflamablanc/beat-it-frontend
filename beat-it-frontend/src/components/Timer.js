@@ -3,20 +3,17 @@ import React from 'react'
 class Timer extends React.Component{
     
     state = {
-        time: this.props.time,
+        time: this.props.gameDuration,
         isOn: false,
         start: 0,
         roundDuration: 60
     }
         
     startGameTimer = () => {
-    
-        let gameInterval = setInterval(function() {
-            this.setState(prevState => {
-                return {time: prevState.time - 1}
-             })  
-          this.renderTime();
-        }, 1000);
+        this.timer = setInterval(() => this.setState({
+            time: this.state.time - 1
+          }), 1000)
+          console.log("start")
     }
     
     // setGameTime = () => {
@@ -78,7 +75,7 @@ class Timer extends React.Component{
     render(){
         return(
             <div>
-                <h2> Timer: {this.props.time}</h2>
+                <h2> Timer: {this.state.time}</h2>
             </div>
         )
     }
