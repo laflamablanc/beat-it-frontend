@@ -25,21 +25,31 @@ class App extends React.Component {
   }
 
   genreSelect = (e) => {
-    if (e.target.id == "Rap"){
-        this.state.questionID = 1
-    } else if(e.target.id == "Rock"){
-        this.state.questionID = 37
+    if (e.target.id === "Rap"){
+        this.setState({
+          questionID: 1
+        })
+    } else if(e.target.id === "Rock"){
+        this.setState({
+          questionId: 37
+        })
     }
     this.props.history.push("/difficulty")
   }
 
   difficultySelect = (e) => {
-    if (e.target.id == "Easy"){
-        this.state.gameDuration = 60
-    } else if (e.target.id == "Medium"){
-      this.state.gameDuration = 30
-    } else if (e.target.id == "Hard"){
-      this.state.gameDuration = 15
+    if (e.target.id === "Easy"){
+        this.setState({
+          gameDuration: 60
+        })
+    } else if (e.target.id === "Medium"){
+      this.setState({
+        gameDuration: 30
+      })
+    } else if (e.target.id === "Hard"){
+      this.setState({
+        gameDuration: 15
+      })
     }
     this.props.history.push(`/question/${this.state.questionID}`)
   }
@@ -72,7 +82,7 @@ class App extends React.Component {
           <Route path="/genre" render={()=> <Genre user = {this.state.user} questionID = {this.state.questionID}/>}/>
           <Route path="/difficulty" render={()=> <Difficulty user = {this.state.user}/>}/>
           <Route path="/highscores" render={()=> <HighScores user = {this.state.user}/>}/>
-          <Route path="/question/" render={()=> <QuestionContainer user = {this.state.user} questionID = {this.state.questionId}/>}/>
+          <Route path="/question/" render={()=> <QuestionContainer user = {this.state.user} questionID = {this.state.questionId} gameDuration = {this.state.gameDuration}/>}/>
           <Route path="/" render={()=> <NewGame user = {this.state.user}/>}/>
         </Switch>
       </React.Fragment>

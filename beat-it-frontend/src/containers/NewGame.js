@@ -10,9 +10,9 @@ class NewGame extends React.Component {
 
     clickHandler = (e) => {
 
-        if (e.target.id == "Start Game"){
+        if (e.target.id === "Start Game"){
             this.props.history.push("/genre")
-        } else if (e.target.id == "View Scores"){
+        } else if (e.target.id === "View Scores"){
             this.props.history.push("/highscores")
         }
     }

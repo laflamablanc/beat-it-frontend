@@ -13,6 +13,7 @@ class QuestionContainer extends React.Component{
     }
 
     render(){
+        console.log("Game Duration:", this.props.gameDuration)
         return(
             this.state.user? 
             <div>
