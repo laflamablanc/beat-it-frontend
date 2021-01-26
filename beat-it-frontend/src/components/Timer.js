@@ -10,11 +10,26 @@ class Timer extends React.Component{
     }
         
     startGameTimer = () => {
-        this.timer = setInterval(() => this.setState({
-            time: this.state.time - 1
-          }), 1000)
-          console.log("start")
+        
+        this.timer = setInterval(() => {
+            let time = this.state.time
+            if (time > 0) {
+                this.setState(({ time }) => ({
+                  time: time - 1
+                }))
+              }
+              
+            if (time === 0) {
+                console.log("Game Over")
+                clearInterval(this.timer)
+            } 
+        }, 1000)
     }
+            
+                    
+
+
+
     
     // setGameTime = () => {
     //     if (test) { console.log("--- setGameTime ---"); }
