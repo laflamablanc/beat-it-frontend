@@ -38,6 +38,7 @@ class App extends React.Component {
   }
 
   difficultySelect = (e) => {
+  
     if (e.target.id === "Easy"){
         this.setState({
           gameDuration: 60
@@ -80,7 +81,7 @@ class App extends React.Component {
           <Route path="/login" render={()=> <Login submitCredentials={this.submitCredentials}/>}/>
           <Route path="/signup" render={()=> <Signup submitCredentials={this.submitCredentials}/>}/>
           <Route path="/genre" render={()=> <Genre user = {this.state.user} questionID = {this.state.questionID}/>}/>
-          <Route path="/difficulty" render={()=> <Difficulty user = {this.state.user}/>}/>
+          <Route path="/difficulty" render={()=> <Difficulty user = {this.state.user} difficultySelect = {this.difficultySelect}/>}/>
           <Route path="/highscores" render={()=> <HighScores user = {this.state.user}/>}/>
           <Route path="/question/" render={()=> <QuestionContainer user = {this.state.user} questionID = {this.state.questionId} gameDuration = {this.state.gameDuration}/>}/>
           <Route path="/" render={()=> <NewGame user = {this.state.user}/>}/>

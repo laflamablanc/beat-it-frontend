@@ -10,7 +10,8 @@ class Difficulty extends React.Component {
         questionId: this.props.questionId
     }
 
-    clickHandler = () => {
+    clickHandler = (e) => {
+        this.props.difficultySelect(e)
         this.props.history.push("/question")
     }
 
@@ -24,7 +25,6 @@ class Difficulty extends React.Component {
                         <CardButton clickHandler={this.clickHandler} displayText="Easy"/>
                         <CardButton clickHandler={this.clickHandler} displayText="Medium"/>
                         <CardButton clickHandler={this.clickHandler} displayText="Hard"/>
-
                     </div>
 
             :
