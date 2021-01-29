@@ -12,13 +12,24 @@ class QuestionContainer extends React.Component{
         questionId: 1
     }
 
+    nextQ = () => {
+        this.setState({
+            ...this.state,
+            questionId: this.state.questionId + 1
+        })
+    }
+
     render(){
 
         return(
             this.state.user? 
             <div>
                 <Timer gameDuration={this.props.gameDuration}/>
-                <QuestionCard questionId={this.props.questionId} question={this.state.questionArray[this.state.questionId]}/>
+                <QuestionCard 
+                    questionId={this.props.questionId} 
+                    question={this.state.questionArray[this.state.questionId]}
+                    nextQ = {this.nextQ}
+                    />
             </div>
             :
             <Redirect to="/login"/>
