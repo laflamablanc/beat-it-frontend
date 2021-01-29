@@ -22,6 +22,7 @@ class Timer extends React.Component{
             if (time === 0) {
                 console.log("Game Over")
                 clearInterval(this.timer)
+                alert('Game Over')
             } 
         }, 1000)
     }
