@@ -18,7 +18,7 @@ class QuestionContainer extends React.Component{
             this.state.user? 
             <div>
                 <Timer gameDuration={this.props.gameDuration}/>
-                <QuestionCard questionId={this.props.questionId} questionArray={this.state.questionArray}/>
+                <QuestionCard questionId={this.props.questionId} question={this.state.questionArray[this.state.questionId]}/>
             </div>
             :
             <Redirect to="/login"/>
