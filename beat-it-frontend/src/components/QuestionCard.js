@@ -8,7 +8,16 @@ class QuestionCard extends React.Component{
   }
 
   updateScore = (e) => {
-    console.log(e.target.value)
+    if (e.target.id === this.props.question.correct){
+      console.log("yello")
+      this.setState({
+        score: this.state.score + 100
+      })
+    } else {
+      this.setState({
+        score: this.state.score - 50
+      })
+    }
   }
 
   render(){
