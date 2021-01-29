@@ -24,8 +24,8 @@ class QuestionCard extends React.Component{
           <button class= "button-choice" data-choice = " " type="button">{this.props.question.answer4}</button>
         </div>
         <div class = "">
-          <button class= "play-buttons" data-play= '${data.filename}'> ▶️ </button>
-          <button class= "play-buttons" data-pause= '${data.filename}'> ⏸ </button>
+          <button class= "play-buttons" data-play= {this.props.question.filename}> ▶️ </button>
+          <button class= "play-buttons" data-pause= {this.props.question.filename}> ⏸ </button>
         </div>
         {/* <div id='correct' style="visibility: hidden">${this.props.question.correct}</div> */}
       </div> 
