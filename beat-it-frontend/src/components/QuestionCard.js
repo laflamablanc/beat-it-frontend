@@ -7,6 +7,10 @@ class QuestionCard extends React.Component{
     score: 0
   }
 
+  updateScore = (e) => {
+    console.log(e.target.value)
+  }
+
   render(){
     
    
@@ -18,10 +22,30 @@ class QuestionCard extends React.Component{
         <h2>{this.props.question.ask}</h2>
         <p>SCORE: {this.state.score}</p>
         <div class = "button-grid">
-          <button class= "button-choice" data-choice = " " type="button">{this.props.question.answer1}</button>
-          <button class= "button-choice" data-choice = " " type="button">{this.props.question.answer2}</button>
-          <button class= "button-choice" data-choice = " " type="button">{this.props.question.answer3}</button>
-          <button class= "button-choice" data-choice = " " type="button">{this.props.question.answer4}</button>
+          <button 
+            class= "button-choice" 
+            data-choice = " " 
+            type="button"
+            id =  {this.props.question.answer1}
+            onClick ={this.updateScore}>{this.props.question.answer1}</button>
+          <button 
+            class= "button-choice" 
+            data-choice = " " 
+            type="button" 
+            id =  {this.props.question.answer2}
+            onClick ={this.updateScore}>{this.props.question.answer2}</button>
+          <button 
+            class= "button-choice" 
+            data-choice = " " 
+            type="button"
+            id =  {this.props.question.answer3} 
+            onClick ={this.updateScore}>{this.props.question.answer3}</button>
+          <button 
+            class= "button-choice" 
+            data-choice = " " 
+            type="button"
+            id =  {this.props.question.answer4} 
+            onClick ={this.updateScore}>{this.props.question.answer4}</button>
         </div>
         <div class = "">
           <button class= "play-buttons" data-play= {this.props.question.filename}> ▶️ </button>
