@@ -74,7 +74,6 @@ class App extends React.Component {
   }
 
   render(){
-    console.log("App User:", this.state.user)
     return (
       <React.Fragment>
         <Switch>

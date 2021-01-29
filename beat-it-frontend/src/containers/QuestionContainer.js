@@ -13,12 +13,12 @@ class QuestionContainer extends React.Component{
     }
 
     render(){
-        console.log("Game Duration:", this.props.gameDuration)
+
         return(
             this.state.user? 
             <div>
                 <Timer gameDuration={this.props.gameDuration}/>
-                <QuestionCard questionId={this.props.questionId}/>
+                <QuestionCard questionId={this.props.questionId} questionArray={this.state.questionArray}/>
             </div>
             :
             <Redirect to="/login"/>
@@ -28,7 +28,11 @@ class QuestionContainer extends React.Component{
     componentDidMount(){
         fetch('http://localhost:3000/questions')
         .then(r=> r.json())
-        .then(data => console.log("Questions", data))
+        .then(data => {
+            this.setState({
+                questionArray: data
+            })
+        })
 
     }
 }

@@ -17,7 +17,6 @@ class Genre extends React.Component {
    
 
     render(){
-        console.log("GENRE!!!!", this.state.user)
         return(
             
             this.state.user? 
